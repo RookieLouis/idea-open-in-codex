@@ -1,4 +1,4 @@
-package com.github.cbc.ideaopenincodex.codex;
+package com.github.lkjian.ideaopenincodex.codex;
 
 import java.awt.Desktop;
 import java.net.URI;

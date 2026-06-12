@@ -1,6 +1,6 @@
-package com.github.cbc.ideaopenincodex.actions;
+package com.github.lkjian.ideaopenincodex.actions;
 
-import com.github.cbc.ideaopenincodex.codex.CodexUrlLauncher;
+import com.github.lkjian.ideaopenincodex.codex.CodexUrlLauncher;
 import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;

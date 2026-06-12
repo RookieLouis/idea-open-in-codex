@@ -25,7 +25,7 @@ This repository includes a PowerShell build script that compiles against the loc
 The installable plugin archive is generated at:
 
 ```text
-build\distributions\idea-open-in-codex-0.1.0.zip
+build\distributions\idea-open-in-codex-0.1.1.zip
 ```
 
 Install it from IntelliJ IDEA with `Settings | Plugins | Install Plugin from Disk...`.

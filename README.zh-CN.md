@@ -25,7 +25,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-plugin
 也可以手动安装构建产物：
 
 ```text
-build\distributions\idea-open-in-codex-0.1.0.zip
+build\distributions\idea-open-in-codex-0.1.1.zip
 ```
 
 在 IDEA 中进入 `Settings | Plugins`，点击齿轮图标，选择 `Install Plugin from Disk...`，然后选择上面的 zip 文件。
@@ -41,7 +41,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-plugin.p
 构建完成后会生成：
 
 ```text
-build\distributions\idea-open-in-codex-0.1.0.zip
+build\distributions\idea-open-in-codex-0.1.1.zip
 ```
 
 ## 使用方式

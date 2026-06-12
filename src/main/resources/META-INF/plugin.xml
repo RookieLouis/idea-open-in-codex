@@ -1,10 +1,9 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<!DOCTYPE idea-plugin>
 <idea-plugin>
-    <id>com.github.cbc.ideaopenincodex</id>
+    <id>com.github.lkjian.ideaopenincodex</id>
     <name>Open In Codex</name>
     <vendor>lkjian</vendor>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <idea-version since-build="223"/>
 
     <description><![CDATA[
@@ -15,7 +14,7 @@
 
     <actions>
         <action id="OpenFileInCodex"
-                class="com.github.cbc.ideaopenincodex.actions.OpenCurrentFileInCodexAction"
+                class="com.github.lkjian.ideaopenincodex.actions.OpenCurrentFileInCodexAction"
                 text="Open File In Codex"
                 description="Open current file and line range in a new Codex session">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
@@ -25,7 +24,7 @@
         </action>
 
         <action id="OpenProjectInCodex"
-                class="com.github.cbc.ideaopenincodex.actions.OpenProjectInCodexAction"
+                class="com.github.lkjian.ideaopenincodex.actions.OpenProjectInCodexAction"
                 text="Open Project In Codex"
                 description="Open current project in a new Codex session">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
@@ -33,4 +32,11 @@
             <keyboard-shortcut keymap="$default" first-keystroke="alt shift X"/>
         </action>
     </actions>
+
+    <change-notes><![CDATA[
+        <ul>
+            <li>Use lkjian plugin id and vendor metadata.</li>
+            <li>Open project action now sends the current project prompt.</li>
+        </ul>
+    ]]></change-notes>
 </idea-plugin>

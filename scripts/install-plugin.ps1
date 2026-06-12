@@ -7,10 +7,11 @@ $ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $buildScript = Join-Path $PSScriptRoot "build-plugin.ps1"
 $pluginName = "idea-open-in-codex"
-$version = "0.1.0"
+$version = "0.1.1"
 $sourceJar = Join-Path $root "build\distributions\idea-open-in-codex.jar"
 $targetLibDir = Join-Path $IdeaPluginsDir "$pluginName\lib"
 $targetJar = Join-Path $targetLibDir "$pluginName-$version.jar"
+$targetPluginDir = Join-Path $IdeaPluginsDir $pluginName
 
 & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $buildScript
 if ($LASTEXITCODE -ne 0) {
@@ -21,9 +22,13 @@ if (!(Test-Path $sourceJar)) {
     throw "Cannot find built plugin jar: $sourceJar"
 }
 
+if (Test-Path $targetPluginDir) {
+    Remove-Item $targetPluginDir -Recurse -Force
+}
+
 New-Item $targetLibDir -ItemType Directory -Force | Out-Null
 Copy-Item $sourceJar $targetJar -Force
 
 Write-Host "Installed plugin files:"
-Write-Host (Join-Path $IdeaPluginsDir $pluginName)
+Write-Host $targetPluginDir
 Write-Host "Restart IntelliJ IDEA to load the plugin."
