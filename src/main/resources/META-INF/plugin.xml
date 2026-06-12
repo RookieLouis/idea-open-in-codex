@@ -1,0 +1,36 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<!DOCTYPE idea-plugin>
+<idea-plugin>
+    <id>com.github.cbc.ideaopenincodex</id>
+    <name>Open In Codex</name>
+    <vendor>lkjian</vendor>
+    <version>0.1.0</version>
+    <idea-version since-build="223"/>
+
+    <description><![CDATA[
+        <p>Open the current IntelliJ IDEA file or project in a new Codex session.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action id="OpenFileInCodex"
+                class="com.github.cbc.ideaopenincodex.actions.OpenCurrentFileInCodexAction"
+                text="Open File In Codex"
+                description="Open current file and line range in a new Codex session">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift C"/>
+        </action>
+
+        <action id="OpenProjectInCodex"
+                class="com.github.cbc.ideaopenincodex.actions.OpenProjectInCodexAction"
+                text="Open Project In Codex"
+                description="Open current project in a new Codex session">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift X"/>
+        </action>
+    </actions>
+</idea-plugin>
