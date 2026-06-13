@@ -11,8 +11,8 @@ IntelliJ IDEA plugin for opening the current project or current file location in
 
 Default shortcuts:
 
-- `Alt+Shift+C`: open current file in Codex
-- `Alt+Shift+X`: open current project in Codex
+- `Alt+Shift+O`: open current file in Codex
+- `Alt+Shift+P`: open current project in Codex
 
 ## Local Build
 
@@ -25,7 +25,7 @@ This repository includes a PowerShell build script that compiles against the loc
 The installable plugin archive is generated at:
 
 ```text
-build\distributions\idea-open-in-codex-0.1.1.zip
+build\distributions\idea-open-in-codex-1.1.1.zip
 ```
 
 Install it from IntelliJ IDEA with `Settings | Plugins | Install Plugin from Disk...`.

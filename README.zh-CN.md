@@ -9,8 +9,8 @@
 
 默认快捷键：
 
-- `Alt+Shift+C`：在 Codex 中打开当前文件位置
-- `Alt+Shift+X`：在 Codex 中打开当前项目
+- `Alt+Shift+O`：在 Codex 中打开当前文件位置
+- `Alt+Shift+P`：在 Codex 中打开当前项目
 
 ## 安装
 
@@ -25,7 +25,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-plugin
 也可以手动安装构建产物：
 
 ```text
-build\distributions\idea-open-in-codex-0.1.1.zip
+build\distributions\idea-open-in-codex-1.1.1.zip
 ```
 
 在 IDEA 中进入 `Settings | Plugins`，点击齿轮图标，选择 `Install Plugin from Disk...`，然后选择上面的 zip 文件。
@@ -41,7 +41,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-plugin.p
 构建完成后会生成：
 
 ```text
-build\distributions\idea-open-in-codex-0.1.1.zip
+build\distributions\idea-open-in-codex-1.1.1.zip
 ```
 
 ## 使用方式
@@ -51,13 +51,13 @@ build\distributions\idea-open-in-codex-0.1.1.zip
 - 顶部菜单：`Tools | Open File In Codex`
 - 编辑器右键菜单：`Open File In Codex`
 - 项目视图右键菜单：`Open File In Codex`
-- 快捷键：`Alt+Shift+C`
+- 快捷键：`Alt+Shift+O`
 
 项目入口：
 
 - 顶部菜单：`Tools | Open Project In Codex`
 - 项目视图右键菜单：`Open Project In Codex`
-- 快捷键：`Alt+Shift+X`
+- 快捷键：`Alt+Shift+P`
 
 项目入口生成的提示词格式：
 

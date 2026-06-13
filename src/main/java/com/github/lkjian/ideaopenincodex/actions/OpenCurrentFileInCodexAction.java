@@ -1,6 +1,7 @@
 package com.github.lkjian.ideaopenincodex.actions;
 
 import com.github.lkjian.ideaopenincodex.codex.CodexUrlLauncher;
+import com.github.lkjian.ideaopenincodex.i18n.CodexMessages;
 import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -38,9 +39,7 @@ public final class OpenCurrentFileInCodexAction extends AnAction {
         }
 
         LineRange lineRange = resolveLineRange(event.getData(CommonDataKeys.EDITOR));
-        String prompt = "请查看当前文件：\n"
-                + "文件：" + file.getPath() + "\n"
-                + "行号：" + lineRange.toDisplayText();
+        String prompt = CodexMessages.filePrompt(file.getPath(), lineRange.toDisplayText());
 
         try {
             CodexUrlLauncher.openNewSession(projectPath, prompt);

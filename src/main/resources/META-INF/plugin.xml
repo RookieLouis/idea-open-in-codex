@@ -3,11 +3,34 @@
     <id>com.github.lkjian.ideaopenincodex</id>
     <name>Open In Codex</name>
     <vendor>lkjian</vendor>
-    <version>0.1.1</version>
+    <version>1.1.1</version>
     <idea-version since-build="223"/>
 
     <description><![CDATA[
-        <p>Open the current IntelliJ IDEA file or project in a new Codex session.</p>
+        <p><b>Open In Codex</b> starts a new Codex desktop session directly from IntelliJ IDEA.</p>
+        <p>
+            Use it when you want Codex to inspect the project you are working on, or jump straight to
+            the current file and line range from the editor.
+        </p>
+        <ul>
+            <li><b>Open File In Codex</b>: opens a new Codex session with the current project path, current file path, and selected line range. If no text is selected, the current caret line is used.</li>
+            <li><b>Open Project In Codex</b>: opens a new Codex session with the current project path as the Codex working directory.</li>
+        </ul>
+        <p>Available entry points:</p>
+        <ul>
+            <li>Tools menu: <code>Tools | Open File In Codex</code> and <code>Tools | Open Project In Codex</code></li>
+            <li>Editor context menu: <code>Open File In Codex</code></li>
+            <li>Project view context menu: <code>Open File In Codex</code> and <code>Open Project In Codex</code></li>
+            <li>Shortcuts: <code>Alt+Shift+O</code> for the current file, <code>Alt+Shift+P</code> for the current project</li>
+        </ul>
+        <p>The plugin opens the Codex desktop protocol with prompts such as:</p>
+        <pre>Project: D:\path\to\project</pre>
+        <pre>File: D:\path\to\File.java
+Line: 24-27</pre>
+        <p>
+            Source code: <a href="https://github.com/Like-jian/idea-open-in-codex">https://github.com/Like-jian/idea-open-in-codex</a>.
+            If this plugin helps you, please consider giving the project a star on GitHub.
+        </p>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
@@ -20,7 +43,7 @@
             <add-to-group group-id="ToolsMenu" anchor="first"/>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
             <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="alt shift C"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift O"/>
         </action>
 
         <action id="OpenProjectInCodex"
@@ -29,14 +52,14 @@
                 description="Open current project in a new Codex session">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
             <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="alt shift X"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt shift P"/>
         </action>
     </actions>
 
     <change-notes><![CDATA[
         <ul>
-            <li>Use lkjian plugin id and vendor metadata.</li>
-            <li>Open project action now sends the current project prompt.</li>
+            <li>Simplified Codex prompts to use Project, File, and Line labels.</li>
+            <li>Updated plugin version to 1.1.1.</li>
         </ul>
     ]]></change-notes>
 </idea-plugin>

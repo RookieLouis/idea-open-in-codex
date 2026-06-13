@@ -1,6 +1,7 @@
 package com.github.lkjian.ideaopenincodex.actions;
 
 import com.github.lkjian.ideaopenincodex.codex.CodexUrlLauncher;
+import com.github.lkjian.ideaopenincodex.i18n.CodexMessages;
 import com.intellij.openapi.actionSystem.ActionUpdateThread;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -27,7 +28,7 @@ public final class OpenProjectInCodexAction extends AnAction {
             return;
         }
 
-        String prompt = "请查看当前项目：\n项目：" + projectPath;
+        String prompt = CodexMessages.projectPrompt(projectPath);
         try {
             CodexUrlLauncher.openNewSession(projectPath, prompt);
         } catch (Exception ex) {

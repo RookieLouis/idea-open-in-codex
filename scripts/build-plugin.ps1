@@ -11,7 +11,7 @@ $jarStageDir = Join-Path $buildDir "jar-stage"
 $distStageDir = Join-Path $buildDir "dist-stage"
 $distDir = Join-Path $buildDir "distributions"
 $pluginName = "idea-open-in-codex"
-$version = "0.1.1"
+$version = "1.1.1"
 
 function New-ZipFromDirectory {
     param(
