@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.lkjian.ideaopenincodex"
-version = "1.1.1"
+version = "1.1.2"
 
 java {
     toolchain {

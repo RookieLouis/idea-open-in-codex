@@ -3,7 +3,7 @@
     <id>com.github.lkjian.ideaopenincodex</id>
     <name>Open In Codex</name>
     <vendor>lkjian</vendor>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <idea-version since-build="223"/>
 
     <description><![CDATA[
@@ -14,13 +14,14 @@
         </p>
         <ul>
             <li><b>Open File In Codex</b>: opens a new Codex session with the current project path, current file path, and selected line range. If no text is selected, the current caret line is used.</li>
+            <li><b>Copy File Prompt</b>: copies the current file path and selected line range to the clipboard without opening Codex.</li>
             <li><b>Open Project In Codex</b>: opens a new Codex session with the current project path as the Codex working directory.</li>
         </ul>
         <p>Available entry points:</p>
         <ul>
             <li>Tools menu: <code>Tools | Open File In Codex</code> and <code>Tools | Open Project In Codex</code></li>
-            <li>Editor context menu: <code>Open File In Codex</code></li>
-            <li>Project view context menu: <code>Open File In Codex</code> and <code>Open Project In Codex</code></li>
+            <li>Editor context menu: <code>Open File In Codex</code> and <code>Copy File Prompt</code></li>
+            <li>Project view context menu: <code>Open File In Codex</code>, <code>Copy File Prompt</code>, and <code>Open Project In Codex</code></li>
             <li>Shortcuts: <code>Alt+Shift+O</code> for the current file, <code>Alt+Shift+P</code> for the current project</li>
         </ul>
         <p>The plugin opens the Codex desktop protocol with prompts such as:</p>
@@ -46,6 +47,14 @@ Line: 24-27</pre>
             <keyboard-shortcut keymap="$default" first-keystroke="alt shift O"/>
         </action>
 
+        <action id="CopyFilePrompt"
+                class="com.github.lkjian.ideaopenincodex.actions.CopyFilePromptAction"
+                text="Copy File Prompt"
+                description="Copy current file and line range prompt without opening Codex">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="OpenFileInCodex"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="OpenFileInCodex"/>
+        </action>
+
         <action id="OpenProjectInCodex"
                 class="com.github.lkjian.ideaopenincodex.actions.OpenProjectInCodexAction"
                 text="Open Project In Codex"
@@ -58,8 +67,9 @@ Line: 24-27</pre>
 
     <change-notes><![CDATA[
         <ul>
+            <li>Added Copy File Prompt to editor and project view context menus.</li>
             <li>Simplified Codex prompts to use Project, File, and Line labels.</li>
-            <li>Updated plugin version to 1.1.1.</li>
+            <li>Updated plugin version to 1.1.2.</li>
         </ul>
     ]]></change-notes>
 </idea-plugin>

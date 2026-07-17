@@ -5,6 +5,7 @@
 ## 功能
 
 - `Open File In Codex`：打开新的 Codex 会话，并带上当前项目路径、当前文件路径以及选中的行号范围；如果没有选中文本，则使用当前光标所在行。
+- `Copy File Prompt`：把与文件打开功能相同的当前文件路径和行号范围提示词复制到剪贴板，但不打开 Codex；可从编辑器和项目视图右键菜单使用。
 - `Open Project In Codex`：打开新的 Codex 会话，并把当前项目路径作为 Codex 工作目录，同时附带当前项目路径提示词。
 
 默认快捷键：
@@ -25,7 +26,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-plugin
 也可以手动安装构建产物：
 
 ```text
-build\distributions\idea-open-in-codex-1.1.1.zip
+build\distributions\idea-open-in-codex-1.1.2.zip
 ```
 
 在 IDEA 中进入 `Settings | Plugins`，点击齿轮图标，选择 `Install Plugin from Disk...`，然后选择上面的 zip 文件。
@@ -41,7 +42,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-plugin.p
 构建完成后会生成：
 
 ```text
-build\distributions\idea-open-in-codex-1.1.1.zip
+build\distributions\idea-open-in-codex-1.1.2.zip
 ```
 
 ## 使用方式
@@ -50,7 +51,9 @@ build\distributions\idea-open-in-codex-1.1.1.zip
 
 - 顶部菜单：`Tools | Open File In Codex`
 - 编辑器右键菜单：`Open File In Codex`
+- 编辑器右键菜单：`Copy File Prompt`
 - 项目视图右键菜单：`Open File In Codex`
+- 项目视图右键菜单：`Copy File Prompt`
 - 快捷键：`Alt+Shift+O`
 
 项目入口：

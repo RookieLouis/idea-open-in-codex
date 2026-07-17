@@ -7,6 +7,7 @@ IntelliJ IDEA plugin for opening the current project or current file location in
 ## Actions
 
 - `Open File In Codex`: opens `codex://new` with the current project path and a Chinese prompt containing the current file plus selected line range or caret line.
+- `Copy File Prompt`: copies the same current file and line range prompt to the clipboard without opening Codex. It is available from the editor and project view context menus.
 - `Open Project In Codex`: opens `codex://new` with the current project path and a Chinese prompt containing the project path.
 
 Default shortcuts:
@@ -25,7 +26,7 @@ This repository includes a PowerShell build script that compiles against the loc
 The installable plugin archive is generated at:
 
 ```text
-build\distributions\idea-open-in-codex-1.1.1.zip
+build\distributions\idea-open-in-codex-1.1.2.zip
 ```
 
 Install it from IntelliJ IDEA with `Settings | Plugins | Install Plugin from Disk...`.
