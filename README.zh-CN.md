@@ -2,9 +2,21 @@
 
 这是一个 IntelliJ IDEA 插件，用于从 IDEA 中把当前项目或当前文件位置打开到新的 Codex 桌面端会话。
 
+## 此 Fork 的变更
+
+本仓库 Fork 自 [Like-jian/idea-open-in-codex](https://github.com/Like-jian/idea-open-in-codex)。
+
+修改了 `Open File In Codex`：在文件路径和行号信息后保留一个空白输入行，并预填一个普通空格。转到 Codex 后，可以直接在这一行输入自己的 prompt，无需手动换行，也不会插入 `Prompt:` 标签。
+
+实现方式是在原有文件上下文末尾追加两个换行和一个普通空格（`"\n\n "`）。Codex 输入框会清理单个末尾换行；追加上述内容后，末尾输入段落可以保留。
+
+- 已在 Windows、Rider 2026.2.1、Codex 桌面端 26.1013.4894.0 下验证，并在实际输入框中确认效果。
+- `Copy File Prompt` 和 `Open Project In Codex` 保持原有行为。
+- `Open File In Codex` 仍然打开新的 Codex 桌面端会话。
+
 ## 功能
 
-- `Open File In Codex`：打开新的 Codex 会话，并带上当前项目路径、当前文件路径以及选中的行号范围；如果没有选中文本，则使用当前光标所在行。
+- `Open File In Codex`：打开新的 Codex 会话，并带上当前项目路径、当前文件路径以及选中的行号范围；如果没有选中文本，则使用当前光标所在行。末尾保留空白输入行，供直接输入 prompt。
 - `Copy File Prompt`：把与文件打开功能相同的当前文件路径和行号范围提示词复制到剪贴板，但不打开 Codex；可从编辑器和项目视图右键菜单使用。
 - `Open Project In Codex`：打开新的 Codex 会话，并把当前项目路径作为 Codex 工作目录，同时附带当前项目路径提示词。
 
@@ -65,8 +77,7 @@ build\distributions\idea-open-in-codex-1.1.2.zip
 项目入口生成的提示词格式：
 
 ```text
-请查看当前项目：
-项目：D:\path\to\project
+Project: D:\path\to\project
 ```
 
 ## Codex URL
@@ -80,9 +91,10 @@ codex://new?path=<项目路径>&prompt=<提示词>
 文件入口生成的提示词格式：
 
 ```text
-请查看当前文件：
-文件：D:\path\to\File.java
-行号：24-27
+File: D:\path\to\File.java
+Line: 24-27
 ```
+
+文件信息后还会保留一个预填了普通空格的空白输入行，用于继续输入 prompt。
 
 Windows 下会通过 PowerShell 调用 `Start-Process` 打开 Codex 桌面端协议。

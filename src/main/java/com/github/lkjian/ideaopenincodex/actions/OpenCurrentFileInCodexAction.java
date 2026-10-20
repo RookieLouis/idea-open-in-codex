@@ -39,7 +39,8 @@ public final class OpenCurrentFileInCodexAction extends AnAction {
         }
 
         LineRange lineRange = resolveLineRange(event.getData(CommonDataKeys.EDITOR));
-        String prompt = CodexMessages.filePrompt(file.getPath(), lineRange.toDisplayText());
+        // Keep a separate final input paragraph with one ordinary space.
+        String prompt = CodexMessages.filePrompt(file.getPath(), lineRange.toDisplayText()) + "\n\n ";
 
         try {
             CodexUrlLauncher.openNewSession(projectPath, prompt);
