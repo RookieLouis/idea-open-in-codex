@@ -1,0 +1,6 @@
+<keymap version="1" name="Visual Assist - Codex" parent="Visual Assist">
+  <action id="GotoFile" />
+  <action id="OpenFileInCodex">
+    <keyboard-shortcut first-keystroke="alt shift O" />
+  </action>
+</keymap>

@@ -25,6 +25,29 @@
 - `Alt+Shift+O`：在 Codex 中打开当前文件位置
 - `Alt+Shift+P`：在 Codex 中打开当前项目
 
+## Rider 的 Visual Assist 快捷键冲突
+
+Rider 的 **Visual Assist** 快捷键方案已将 `Alt+Shift+O` 分配给文件搜索（`GotoFile`）。继承它的自定义方案也会继承该绑定，因此按键可能打开文件搜索窗口，而没有转到 Codex。
+
+**已有自定义方案时**：先关闭 Rider，备份 `%APPDATA%\JetBrains\Rider<版本>\keymaps\` 下当前方案的 XML 文件，再将以下动作加入其现有的 `<keymap>` 元素内。保留原有方案名称、父方案及其他动作；如果这两个动作已存在，则修改原有动作，不要重复添加：
+
+```xml
+<action id="GotoFile" />
+<action id="OpenFileInCodex">
+  <keyboard-shortcut first-keystroke="alt shift O" />
+</action>
+```
+
+空的 `GotoFile` 动作会清除继承的快捷键。如果你还为 `GotoFile` 自定义了其他快捷键，请保留这些条目，只移除 `Alt+Shift+O`，不要清空整个动作；`OpenFileInCodex` 已有的其他快捷键也应保留。重启 Rider，在代码编辑器中按 `Alt+Shift+O` 即可打开 Codex。此修复已在 Windows、Rider 2026.2.1 下实测确认。
+
+**直接使用原版 Visual Assist 时**，可选用仓库内的 [Visual Assist - Codex 预设](<keymaps/Visual Assist - Codex.xml>)：
+
+1. 安装 Open In Codex，并启用 Visual Assist Keymap 插件。
+2. 关闭 Rider，将预设文件复制到 `%APPDATA%\JetBrains\Rider<版本>\keymaps\`。
+3. 启动 Rider，在 **Settings | Keymap** 中选择 **Visual Assist - Codex**。
+
+该预设需要手动选用，继承其余 Visual Assist 快捷键，并将 `Alt+Shift+O` 分配给 `Open File In Codex`。如果已有个人快捷键设置，请保留当前自定义方案，采用上面的 XML 调整方式。
+
 ## 安装
 
 推荐使用安装脚本直接安装到当前 IDEA 用户插件目录：
